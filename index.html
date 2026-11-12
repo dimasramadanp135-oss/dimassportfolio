@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dimas Ramadan Putra — Web &amp; Mobile Developer</title>
+  <meta name="description" content="Portfolio pribadi Dimas Ramadan Putra, siswa RPL SMK — Web & Mobile Developer. Berpengalaman dalam HTML, CSS, JavaScript, PHP, Flutter, Laravel, dan lainnya." />
+  <meta name="keywords" content="Dimas Ramadan Putra, Web Developer, Mobile Developer, RPL, SMK, Portfolio, Flutter, Laravel" />
+  <meta name="author" content="Dimas Ramadan Putra" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Dimas Ramadan Putra — Web & Mobile Developer" />
+  <meta property="og:description" content="Portfolio pribadi siswa RPL SMK — Web & Mobile Developer." />
+  <meta property="og:type" content="website" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Lucide Icons (CDN) -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+
+  <!-- Theme Initialization (prevents flash of wrong theme, defaults to light) -->
+  <script>
+    (function() {
+      try {
+        var saved = localStorage.getItem('portfolio-theme');
+        var theme = (saved === 'dark' || saved === 'light') ? saved : 'light';
+        document.documentElement.setAttribute('data-theme', theme);
+      } catch (e) {
+        document.documentElement.setAttribute('data-theme', 'light');
+      }
+    })();
+  </script>
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="theme.css" />
+</head>
+<body>
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-bracket">&lt;</span>DRP<span class="logo-bracket"> /&gt;</span>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#home" class="nav-link active" data-section="home">Home</a></li>
+        <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+        <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+        <li><a href="#certificates" class="nav-link" data-section="certificates">Certificates</a></li>
+        <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+      </ul>
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Ganti ke tema gelap" title="Ganti ke tema gelap" type="button">
+          <!-- Sun Icon (shown in dark theme) -->
+          <svg class="theme-icon theme-icon--sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4"></circle>
+            <path d="M12 2v2"></path>
+            <path d="M12 20v2"></path>
+            <path d="m4.93 4.93 1.41 1.41"></path>
+            <path d="m17.66 17.66 1.41 1.41"></path>
+            <path d="M2 12h2"></path>
+            <path d="M20 12h2"></path>
+            <path d="m6.34 17.66-1.41 1.41"></path>
+            <path d="m19.07 4.93-1.41 1.41"></path>
+          </svg>
+          <!-- Moon Icon (shown in light theme) -->
+          <svg class="theme-icon theme-icon--moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+          </svg>
+        </button>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+          <span class="hamburger"></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero" id="home">
+    <div class="hero-bg-grid"></div>
+    <div class="hero-glow hero-glow--1"></div>
+    <div class="hero-glow hero-glow--2"></div>
+
+    <div class="hero-content">
+      <div class="hero-badge">
+        <span class="badge-dot"></span>
+        Terbuka untuk PKL &amp; Kolaborasi
+      </div>
+
+      <h1 class="hero-name">
+        Halo, saya <span class="highlight">Dimas</span><span class="highlight-secondary"> Ramadan Putra</span>
+      </h1>
+      <p class="hero-tagline">Web &amp; Mobile Developer <span class="tagline-divider">|</span> Siswa RPL SMK</p>
+      <p class="hero-location">
+        <i data-lucide="map-pin" class="icon-inline"></i>
+        Bandung Barat, Jawa Barat, Indonesia
+      </p>
+
+      <div class="hero-actions">
+        <a href="#projects" class="btn btn-primary">
+          <i data-lucide="folder-open" class="icon-inline"></i>
+          Lihat Proyek
+        </a>
+        <a href="#contact" class="btn btn-outline">
+          <i data-lucide="send" class="icon-inline"></i>
+          Hubungi Saya
+        </a>
+      </div>
+
+      <div class="hero-socials">
+        <a href="https://linkedin.com/in/dimas-ramadan-putra" target="_blank" rel="noopener" aria-label="LinkedIn" class="social-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://github.com/dimasramadanp135-oss" target="_blank" rel="noopener" aria-label="GitHub" class="social-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+        </a>
+        <a href="https://youtube.com/@DimasRamadanP" target="_blank" rel="noopener" aria-label="YouTube" class="social-link">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+        </a>
+        <a href="mailto:dimasramadanputra135@gmail.com" aria-label="Email" class="social-link">
+          <i data-lucide="mail"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="scroll-indicator" aria-hidden="true">
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">&lt;tentang /&gt;</span>
+        <h2 class="section-title">Tentang Saya</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>
+            Saya adalah siswa kelas XII jurusan <strong>Rekayasa Perangkat Lunak (RPL)</strong> yang memiliki ketertarikan kuat dalam membangun <strong>website</strong>, <strong>aplikasi mobile</strong>, dan <strong>desain UI/UX</strong>.
+          </p>
+          <p>
+            Berpengalaman menggunakan <strong>HTML, CSS, JavaScript, PHP, Flutter/Dart, Bootstrap, Laravel</strong>, serta database <strong>MySQL</strong> dan <strong>Oracle</strong>. Selalu antusias untuk belajar teknologi baru dan membangun solusi digital yang bermanfaat.
+          </p>
+          <p>
+            Saat ini aktif membangun <a href="https://larisin.id" target="_blank" rel="noopener" class="text-link">larisin.id</a>, sebuah tim kecil yang membantu <strong>UMKM lokal go digital</strong> lewat pembuatan website dan pengelolaan media sosial.
+          </p>
+        </div>
+
+        <div class="about-stats reveal">
+          <div class="stat-card">
+            <span class="stat-number" data-count="3">0</span>
+            <span class="stat-label">Proyek Selesai</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-count="10">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Teknologi Dikuasai</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-count="1">0</span>
+            <span class="stat-label">Klien Komersial</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills -->
+      <div class="skills-section reveal">
+        <h3 class="skills-title">
+          <i data-lucide="zap" class="icon-inline"></i>
+          Keahlian
+        </h3>
+
+        <div class="skills-grid">
+          <div class="skill-group">
+            <h4 class="skill-group-title">
+              <i data-lucide="code-2" class="icon-inline"></i>
+              Bahasa Pemrograman
+            </h4>
+            <div class="skill-tags">
+              <span class="skill-tag">HTML</span>
+              <span class="skill-tag">CSS</span>
+              <span class="skill-tag">JavaScript</span>
+              <span class="skill-tag">PHP</span>
+              <span class="skill-tag">Dart</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h4 class="skill-group-title">
+              <i data-lucide="layers" class="icon-inline"></i>
+              Framework &amp; Tools
+            </h4>
+            <div class="skill-tags">
+              <span class="skill-tag">Flutter</span>
+              <span class="skill-tag">Bootstrap</span>
+              <span class="skill-tag">Laravel</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h4 class="skill-group-title">
+              <i data-lucide="palette" class="icon-inline"></i>
+              Desain
+            </h4>
+            <div class="skill-tags">
+              <span class="skill-tag">UI/UX Design</span>
+              <span class="skill-tag">Wireframing</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h4 class="skill-group-title">
+              <i data-lucide="database" class="icon-inline"></i>
+              Database
+            </h4>
+            <div class="skill-tags">
+              <span class="skill-tag">MySQL</span>
+              <span class="skill-tag">Oracle</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== PROJECTS ========== -->
+  <section class="section section--alt" id="projects">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">&lt;proyek /&gt;</span>
+        <h2 class="section-title">Proyek Saya</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1 -->
+        <article class="project-card reveal">
+          <div class="project-card-glow"></div>
+          <div class="project-number">01</div>
+          <div class="project-icon">
+            <i data-lucide="building-2"></i>
+          </div>
+          <h3 class="project-title">Company Profile — Maju Mulus Jaya Aspal</h3>
+          <p class="project-desc">
+            Website company profile untuk perusahaan penyedia jasa dan produk aspal, dibangun dan telah live digunakan secara komersial oleh klien.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Live</span>
+            <span class="project-tag">Komersial</span>
+          </div>
+          <a href="https://majumulusjayaaspal.com" target="_blank" rel="noopener" class="btn btn-sm">
+            <i data-lucide="external-link" class="icon-inline"></i>
+            Kunjungi
+          </a>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="project-card reveal">
+          <div class="project-card-glow"></div>
+          <div class="project-number">02</div>
+          <div class="project-icon">
+            <i data-lucide="graduation-cap"></i>
+          </div>
+          <h3 class="project-title">Website Sekolah</h3>
+          <p class="project-desc">
+            Website informasi sekolah yang mencakup profil, berita, dan informasi akademik, dibangun sebagai proyek pembelajaran jurusan RPL.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Pembelajaran</span>
+            <span class="project-tag">Akademik</span>
+          </div>
+          <a href="https://dimasramadanp135-oss.github.io/website-sekolah-dimas/" target="_blank" rel="noopener" class="btn btn-sm">
+            <i data-lucide="external-link" class="icon-inline"></i>
+            Kunjungi
+          </a>
+        </article>
+
+        <!-- UX Case Study -->
+        <article class="project-card reveal">
+          <div class="project-card-glow"></div>
+          <div class="project-number">03</div>
+          <div class="project-icon">
+            <i data-lucide="panels-top-left"></i>
+          </div>
+          <h3 class="project-title">UX Case Study — Replikasi Website BPK PENABUR</h3>
+          <p class="project-desc">
+            Studi kasus perbaikan navigasi website BPK PENABUR berdasarkan usability testing SEQ, dari riset pengguna hingga mockup dan prototype Figma.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">UX Research</span>
+            <span class="project-tag">UI/UX Design</span>
+          </div>
+          <a href="ux-case-study.html" class="btn btn-sm">
+            <i data-lucide="arrow-up-right" class="icon-inline"></i>
+            Lihat Studi Kasus
+          </a>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="project-card reveal">
+          <div class="project-card-glow"></div>
+          <div class="project-number">04</div>
+          <div class="project-icon">
+            <i data-lucide="receipt"></i>
+          </div>
+          <h3 class="project-title">Aplikasi Kasir</h3>
+          <p class="project-desc">
+            Aplikasi kasir untuk mencatat transaksi penjualan, dibangun sebagai proyek pembelajaran jurusan RPL dengan fitur input barang, transaksi, dan laporan.
+          </p>
+          <div class="project-tags">
+            <span class="project-tag">Pembelajaran</span>
+            <span class="project-tag">Aplikasi Web</span>
+          </div>
+          <a href="https://kasirdimas.infinityfreeapp.com" target="_blank" rel="noopener" class="btn btn-sm">
+            <i data-lucide="external-link" class="icon-inline"></i>
+            Kunjungi
+          </a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CERTIFICATES ========== -->
+  <section class="section" id="certificates">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">&lt;sertifikat /&gt;</span>
+        <h2 class="section-title">Sertifikat &amp; Dokumen Pendukung</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="cert-wrapper reveal">
+        <a href="https://drive.google.com/drive/folders/1VcBBkHtA0MdZe-rFzqist0NM_2Su1MbF" target="_blank" rel="noopener" class="cert-card">
+          <div class="cert-card-bg"></div>
+          <div class="cert-icon">
+            <i data-lucide="folder-open"></i>
+          </div>
+          <h3 class="cert-title">Lihat Semua Sertifikat &amp; Dokumen</h3>
+          <p class="cert-desc">
+            Kumpulan sertifikat, tugas, dan dokumen pendukung lainnya dalam format gambar dan PDF.
+          </p>
+          <div class="cert-action">
+            <span>Buka Google Drive</span>
+            <i data-lucide="arrow-right" class="icon-inline"></i>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section class="section section--alt" id="contact">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">&lt;kontak /&gt;</span>
+        <h2 class="section-title">Hubungi Saya</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info reveal">
+          <p class="contact-intro">
+            Tertarik untuk berkolaborasi atau punya pertanyaan? Jangan ragu untuk menghubungi saya melalui salah satu channel berikut.
+          </p>
+
+          <div class="contact-cards">
+            <a href="mailto:dimasramadanputra135@gmail.com" class="contact-card">
+              <div class="contact-card-icon">
+                <i data-lucide="mail"></i>
+              </div>
+              <div>
+                <span class="contact-card-label">Email</span>
+                <span class="contact-card-value">dimasramadanputra135@gmail.com</span>
+              </div>
+            </a>
+
+            <a href="https://wa.me/6285210001105" target="_blank" rel="noopener" class="contact-card">
+              <div class="contact-card-icon">
+                <i data-lucide="phone"></i>
+              </div>
+              <div>
+                <span class="contact-card-label">WhatsApp</span>
+                <span class="contact-card-value">0852-1000-1105</span>
+              </div>
+            </a>
+
+            <a href="https://linkedin.com/in/dimas-ramadan-putra" target="_blank" rel="noopener" class="contact-card">
+              <div class="contact-card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </div>
+              <div>
+                <span class="contact-card-label">LinkedIn</span>
+                <span class="contact-card-value">dimas-ramadan-putra</span>
+              </div>
+            </a>
+
+            <a href="https://github.com/dimasramadanp135-oss" target="_blank" rel="noopener" class="contact-card">
+              <div class="contact-card-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              </div>
+              <div>
+                <span class="contact-card-label">GitHub</span>
+                <span class="contact-card-value">dimasramadanp135-oss</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <a href="#home" class="footer-logo">
+          <span class="logo-bracket">&lt;</span>DRP<span class="logo-bracket"> /&gt;</span>
+        </a>
+        <p class="footer-copy">&copy; 2026 Dimas Ramadan Putra. All rights reserved.</p>
+        <div class="footer-socials">
+          <a href="https://linkedin.com/in/dimas-ramadan-putra" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg></a>
+          <a href="https://github.com/dimasramadanp135-oss" target="_blank" rel="noopener" aria-label="GitHub"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg></a>
+          <a href="https://youtube.com/@DimasRamadanP" target="_blank" rel="noopener" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="theme.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
