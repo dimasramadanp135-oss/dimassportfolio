@@ -763,6 +763,96 @@ ul { list-style: none; }
   line-height: 1.45;
 }
 
+/* Before / after score comparison */
+.cs-score-comparison {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+  align-items: stretch;
+  gap: 16px;
+  margin: 22px 0 14px;
+}
+
+.cs-score-panel {
+  padding: 22px;
+  background: var(--bg-card-solid);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.cs-score-panel--result {
+  border-color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--accent-glow);
+}
+
+.cs-score-kicker {
+  display: block;
+  color: var(--text-muted);
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.cs-score-panel h4 {
+  margin: 5px 0 12px;
+  color: var(--text-primary);
+  font-size: 1rem;
+}
+
+.cs-score-value {
+  color: var(--text-primary);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(1.8rem, 5vw, 2.45rem);
+  font-weight: 800;
+  line-height: 1.15;
+}
+
+.cs-score-panel--result .cs-score-value { color: var(--accent-light); }
+.cs-score-value span { color: var(--text-muted); font-size: .95rem; font-weight: 500; }
+.cs-score-panel p { margin: 8px 0 0 !important; font-size: .82rem !important; }
+
+.cs-score-change {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  color: var(--accent-light);
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.cs-score-change strong { font-size: .76rem; white-space: nowrap; }
+.cs-score-note { color: var(--text-secondary); font-size: .87rem !important; }
+
+/* Navbar comparison images */
+.cs-navbar-comparison {
+  display: grid;
+  gap: 16px;
+  margin: 20px 0 28px;
+}
+
+.cs-navbar-shot {
+  overflow: hidden;
+  background: var(--bg-card-solid);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.cs-navbar-shot figcaption {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 12px;
+  padding: 13px 16px;
+  color: var(--text-secondary);
+  font-size: .82rem;
+}
+
+.cs-navbar-shot figcaption strong { color: var(--text-primary); font-size: .9rem; }
+.cs-navbar-shot a { display: block; background: #fff; }
+.cs-navbar-shot img { width: 100%; height: auto; }
+
 /* Scope list */
 .cs-scope-list {
   display: grid;
@@ -1650,6 +1740,16 @@ ul { list-style: none; }
    RESPONSIVE
    ============================================================ */
 @media (max-width: 768px) {
+  .cs-score-comparison {
+    grid-template-columns: 1fr;
+  }
+
+  .cs-score-change {
+    flex-direction: row;
+    padding: 0 0 2px;
+    font-size: 1.35rem;
+  }
+
   .cs-cover {
     padding-top: calc(var(--nav-h) + 48px);
     padding-bottom: 56px;
